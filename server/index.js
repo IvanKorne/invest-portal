@@ -16,4 +16,13 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cors());
 
-console.log("hi");
+const PORT = process.env.PORT || 9000;
+
+mongoose
+  .connect(process.env.DB_URL)
+  .then(async () => {
+    app.listen(() => {
+      console.log(`Server is listening on port ${PORT}`);
+    });
+  })
+  .catch((err) => console.log(err));
