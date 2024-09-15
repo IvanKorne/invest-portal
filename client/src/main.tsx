@@ -12,6 +12,7 @@ export const store = configureStore({
 });
 
 setupListeners(store.dispatch);
+
 createRoot(document.getElementById("root")!).render(
   <Provider store={store}>
     <App />
