@@ -6,8 +6,10 @@ import bodyParser from "body-parser";
 import morgan from "morgan";
 import dotenv from "dotenv";
 import kpiRoutes from "./routes/kpi.js";
+import productRoutes from "./routes/product.js";
 import KPI from "./models/KPI.js";
-import { kpis } from "./data/data.js";
+import { kpis, products } from "./data/data.js";
+import Product from "./models/Product.js";
 
 dotenv.config();
 const app = express();
@@ -21,6 +23,7 @@ app.use(cors());
 
 const PORT = process.env.PORT || 9000;
 app.use("/kpi", kpiRoutes);
+app.use("/product", productRoutes);
 
 app.get("/", (req, res) => {
   res.sendStatus(200);
@@ -34,5 +37,6 @@ mongoose
     });
     await mongoose.connection.db.dropDatabase();
     KPI.insertMany(kpis);
+    Product.insertMany(products);
   })
   .catch((err) => console.log(err));

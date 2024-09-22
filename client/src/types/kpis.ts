@@ -25,4 +25,19 @@ export type GetKpisResponse = {
   expensesByCategory: ExpensesByCategory;
   monthlyData: Array<Month>;
   dailyData: Array<Day>;
+  createdAt: string;
+  updatedAt: string;
+};
+
+export type GetProductsResponse = {
+  id: string;
+  _id: string;
+  __v: number;
+  price: number;
+  expense: number;
+  transactions: Array<string>;
+  monthlyData: Array<Month>;
+  dailyData: Array<Day>;
+  createdAt: string;
+  updatedAt: string;
 };

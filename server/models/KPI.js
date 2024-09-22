@@ -4,7 +4,7 @@ import { loadType } from "mongoose-currency";
 const Schema = mongoose.Schema;
 loadType(mongoose);
 
-const financialSchema = {
+export const financialSchema = {
   type: mongoose.Types.Currency,
   currency: "CAD",
   get: (v) => v / 100,
