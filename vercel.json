@@ -1,12 +1,26 @@
 {
-  "client": {
-    "src": "client/package.json",
-    "buildCommand": "cd client && npm install && npm run build",
-    "outputDirectory": "client/build"
-  },
-  "server": {
-    "src": "server/package.json",
-    "buildCommand": "cd server && npm install && npm run build",
-    "outputDirectory": "server/build"
-  }
+  "builds": [
+    {
+      "src": "client/package.json",
+      "use": "@vercel/static-build",
+      "buildCommand": "cd client && npm install && npm run build",
+      "outputDirectory": "client/build"
+    },
+    {
+      "src": "server/package.json",
+      "use": "@vercel/node",
+      "buildCommand": "cd server && npm install && npm run build",
+      "outputDirectory": "server/build"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "server/server.js"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "client/build/$1"
+    }
+  ]
 }
