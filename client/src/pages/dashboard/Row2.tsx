@@ -31,9 +31,6 @@ const Row2 = () => {
     { name: "Group B", value: 400 },
   ];
 
-  console.log("kpis", kpis);
-  console.log("products", products);
-
   const operationalExpenses = useMemo(() => {
     return (
       kpis &&

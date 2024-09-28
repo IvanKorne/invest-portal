@@ -11,9 +11,18 @@ const Navbar = () => {
     <FlexBetween mb="0.25rem" p="0.5rem 0rem" color={palette.grey[300]}>
       <FlexBetween gap="0.75rem">
         <Pix sx={{ fontSize: "28" }} />
-        <Typography variant="h4" fontSize={16}>
-          Fundify
-        </Typography>
+        <Link
+          to={"/"}
+          onClick={() => setSelected("dashboard")}
+          style={{
+            color: selected === "dashboard" ? "inherit" : palette.grey[700],
+            textDecoration: "inherit",
+          }}
+        >
+          <Typography variant="h4" fontSize={16}>
+            Fundify
+          </Typography>
+        </Link>
       </FlexBetween>
       <FlexBetween gap="2rem">
         <Box sx={{ "&:hover": { color: palette.grey[100] } }}>
