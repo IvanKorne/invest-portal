@@ -18,8 +18,6 @@ const Row3 = () => {
   const { palette } = useTheme();
   const pieColors = [palette.primary[800], palette.primary[300]];
 
-  console.log(kpis);
-
   const pieChartData = useMemo(() => {
     if (kpis) {
       const totalExpenses = kpis[0].totalExpenses;
