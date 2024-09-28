@@ -1,5 +1,5 @@
 {
-  "projects": {
+  "invest-portal": {
     "client": {
       "src": "client/package.json",
       "buildCommand": "cd client && npm install && npm run build",
