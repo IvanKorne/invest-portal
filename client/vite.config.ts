@@ -8,4 +8,10 @@ export default defineConfig({
   resolve: {
     alias: [{ find: "@", replacement: path.resolve(__dirname, "src") }],
   },
+  build: {
+    outDir: "dist", // Ensures build output goes to dist directory
+    rollupOptions: {
+      input: "index.html", // Ensure Vite knows the entry point
+    },
+  },
 });
