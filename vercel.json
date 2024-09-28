@@ -1,14 +1,12 @@
 {
-  "invest-portal": {
-    "client": {
-      "src": "client/package.json",
-      "buildCommand": "cd client && npm install && npm run build",
-      "outputDirectory": "client/build"
-    },
-    "server": {
-      "src": "server/package.json",
-      "buildCommand": "cd server && npm install && npm run build",
-      "outputDirectory": "server/build"
-    }
+  "client": {
+    "src": "client/package.json",
+    "buildCommand": "cd client && npm install && npm run build",
+    "outputDirectory": "client/build"
+  },
+  "server": {
+    "src": "server/package.json",
+    "buildCommand": "cd server && npm install && npm run build",
+    "outputDirectory": "server/build"
   }
 }
